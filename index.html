@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Story 💕</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Floating Shapes -->
+    <div class="floating-shape"></div>
+    <div class="floating-shape"></div>
+    <div class="floating-shape"></div>
+
+    <!-- Page 1: Input Data -->
+    <div id="page1" class="page active">
+        <div class="container">
+            <div class="header-icon">
+                <div class="heart"></div>
+            </div>
+            <h1 class="title">💕 Cerita Cinta Kita</h1>
+            <p class="subtitle">Isi data dulu ya sayang...</p>
+            
+            <form id="dataForm">
+                <div class="input-group">
+                    <label><i class="fas fa-user"></i> Nama cowomu </label>
+                    <input type="text" id="namaCewek" placeholder="Tulis nama cantikmu..." required>
+                </div>
+                <div class="input-group">
+                    <label><i class="fas fa-user-tie"></i> Nama kamu</label>
+                    <input type="text" id="namaCowok" placeholder="Nama cowok idaman..." required>
+                </div>
+                <div class="input-group">
+                    <label><i class="fas fa-calendar-heart"></i> Tanggal Jadian</label>
+                    <input type="date" id="tanggalJadian" required>
+                </div>
+                <button type="submit" class="btn-primary">
+                    <span>Lanjut Bucin</span>
+                    <i class="fas fa-heart"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Page 2: Bucin SZA -->
+    <div id="page2" class="page">
+        <div class="music-container">
+            <iframe src="https://www.youtube.com/embed/dAtP5UUeR5Y?autoplay=1&mute=0&loop=1&playlist=dAtP5UUeR5Y" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="container">
+            <div class="bucin-content">
+                <h1 id="bucinTitle">Loading...</h1>
+                <div class="love-stats">
+                    <div class="stat">
+                        <span id="hariBersama">0</span>
+                        <span>Hari Bersama</span>
+                    </div>
+                </div>
+                <button class="btn-primary" onclick="nextPage()">
+                    <span>Lanjut Kenangan</span>
+                    <i class="fas fa-edit"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 3: Kenangan Form -->
+    <div id="page3" class="page">
+        <div class="container">
+            <h1 class="title">📝 Kenangan Manis</h1>
+            <p class="subtitle">Tulis semua perasaanmu...</p>
+            
+            <form id="kenanganForm">
+                <div class="input-group">
+                    <label>💭 Kesan & Pesan</label>
+                    <textarea id="kesanPesan" rows="4" placeholder="Apa yang kamu rasakan selama pacaran..." required></textarea>
+                </div>
+                <div class="input-group">
+                    <label>🌟 Harapan Depan</label>
+                    <textarea id="harapan" rows="3" placeholder="Harapanmu untuk masa depan kita..." required></textarea>
+                </div>
+                <div class="input-group">
+                    <label>💕 Yang Kamu Mau</label>
+                    <textarea id="yangMau" rows="3" placeholder="Hal-hal yang kamu inginkan dari aku..." required></textarea>
+                </div>
+                <div class="input-group">
+                    <label>🚫 Jangan Dilakukan</label>
+                    <textarea id="yangDilarang" rows="3" placeholder="Yang tidak boleh aku lakukan..." required></textarea>
+                </div>
+                <div class="input-group">
+                    <label>🍬 Kata Manis</label>
+                    <textarea id="kataManis" rows="3" placeholder="Kata-kata manismu buat aku..." required></textarea>
+                </div>
+                
+                <button type="submit" class="btn-primary">
+                    <span>Buat Love Letter</span>
+                    <i class="fas fa-magic"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Page 4: Result -->
+    <div id="page4" class="page">
+        <div class="container">
+            <div class="success-animation">
+                <div class="checkmark">
+                    <div class="checkmark-circle"></div>
+                    <div class="checkmark-stem"></div>
+                    <div class="checkmark-kick"></div>
+                </div>
+            </div>
+            <h1 class="title">💌 Love Letter Siap!</h1>
+            <div id="loveSummary"></div>
+            
+            <div class="share-section">
+                <button class="btn-primary" onclick="shareLink()">
+                    <i class="fas fa-share-alt"></i> Bagikan Love Letter
+                </button>
+                <div id="shareLink" class="share-link" style="display: none;">
+                    <input type="text" id="shareUrl" readonly>
+                    <button class="btn-success" onclick="copyLink()">📋 Copy</button>
+                </div>
+            </div>
+            <button class="btn-secondary" onclick="resetAll()">🔄 Buat Lagi</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
